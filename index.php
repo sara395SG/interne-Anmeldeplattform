@@ -26,6 +26,8 @@
         </button>
 
         <p id="message"></p>
+        <p><?php echo "PHP funktioniert! Version: " . phpversion(); ?></p>
+
     </main>
 
     <script src="frontend/js/script.js"></script>
