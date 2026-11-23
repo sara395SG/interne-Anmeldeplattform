@@ -17,7 +17,7 @@
     </header>
 
     <main>
-        <h2>Hello World!</h2>
+        <h2>Hello World!!</h2>
 
         <p>Willkommen in unserer Webanwendung.</p>
 
