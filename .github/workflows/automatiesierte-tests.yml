@@ -16,7 +16,7 @@ jobs:
       with:
         php-version: '8.3'
         
-    - name: PHPUnit installieren (laut composer.json)
+    - name: Abhängigkeiten installieren (laut composer.json)
       run: composer install --no-interaction --no-progress
       
     - name: Tests ausführen
