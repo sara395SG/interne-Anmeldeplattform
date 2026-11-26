@@ -58,7 +58,7 @@ Nur nötig, wenn die Anwendung auf einer VM installiert wird, auf der sie noch n
    ```
    Die erste Zeile muss `HTTP/1.1 200 OK` sein.
 
-5. Code in den Ordner holen, den Apache im Browser anzeigt (`/var/www/html`):
+5. Git repository clonen (wird gespeichert in `/var/www/html/`):
    ```
    sudo git clone https://github.com/sara395SG/interne-Anmeldeplattform.git /var/www/html/anmeldeplattform
    ```
@@ -67,7 +67,7 @@ Nur nötig, wenn die Anwendung auf einer VM installiert wird, auf der sie noch n
 
 ## Update der Anwendung
 
-So wird die VM auf den aktuellen Stand des `main`-Branches gebracht:
+So wird die (bereits eingerichtete) VM auf den aktuellen Stand des `main`-Branches gebracht:
 
 1. Mit der VM verbinden (siehe oben).
 
@@ -85,8 +85,8 @@ So wird die VM auf den aktuellen Stand des `main`-Branches gebracht:
    sudo git status
    ```
    Die Ausgabe muss enthalten:
-   - `Your branch is up to date with 'origin/main'` → die VM hat denselben Stand wie `main` auf GitHub.
-   - `nothing to commit, working tree clean` → auf der VM wurde nichts von Hand geändert.
+   - `Ihr Branch ist auf demselben Stand wie 'origin/main'.` → die VM hat denselben Stand wie `main` auf GitHub.
+   - `nichts zu committen, Arbeitsverzeichnis unverändert` → auf der VM wurde nichts von Hand geändert.
 
    Steht dort etwas anderes (z. B. `Changes not staged for commit`), wurden Dateien direkt auf der VM bearbeitet. Dann nichts löschen, sondern im Team klären, woher die Änderungen kommen.
 
@@ -102,6 +102,7 @@ Sobald die Anwendung selbst eine Bibliothek verwendet (z. B. PHPMailer für die 
 
 - einmalig Composer installieren: `sudo apt install composer`
 - nach jedem Update, bei dem in der Ausgabe von `git pull` die Datei `composer.json` oder `composer.lock` auftaucht, im Installationsordner ausführen:
+
   ```
   sudo composer install --no-dev
   ```
@@ -125,7 +126,7 @@ Bei der Ersteinrichtung und danach ab und zu (z. B. einmal im Monat), damit die 
    cat /var/run/reboot-required
    ```
    - Ausgabe `*** System restart required ***` → Neustart nötig: `sudo reboot`. Die SSH-Verbindung bricht dabei ab. Etwa eine Minute warten und neu verbinden. Apache startet von selbst wieder.
-   - Ausgabe `No such file or directory` → kein Neustart nötig.
+   - Ausgabe `Datei oder Verzeichnis nicht gefunden` → kein Neustart nötig.
 
 ## Hinweise für die Entwicklung
 
