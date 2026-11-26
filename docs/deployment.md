@@ -125,8 +125,8 @@ Bei der Ersteinrichtung und danach ab und zu (z. B. einmal im Monat), damit die 
    ```
    cat /var/run/reboot-required
    ```
-   - Ausgabe `*** System restart required ***` → Neustart nötig: `sudo reboot`. Die SSH-Verbindung bricht dabei ab. Etwa eine Minute warten und neu verbinden. Apache startet von selbst wieder.
-   - Ausgabe `Datei oder Verzeichnis nicht gefunden` → kein Neustart nötig.
+   - Ausgabe `Datei oder Verzeichnis nicht gefunden` (bzw. `No such file or directory`) → kein Neustart nötig.
+   - Jede andere Ausgabe (z. B. `*** System restart required ***`) → Neustart nötig: `sudo reboot`. Die SSH-Verbindung bricht dabei ab. Etwa eine Minute warten und neu verbinden. Apache startet von selbst wieder.
 
 ## Hinweise für die Entwicklung
 
