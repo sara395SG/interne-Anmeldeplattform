@@ -56,8 +56,6 @@ So wird die VM auf den aktuellen Stand des `main`-Branches gebracht:
 
 Die Pakete in `composer.json` stehen unter `require-dev` und werden nur für die Tests in GitHub Actions gebraucht, nicht auf der VM. Falls künftig Pakete unter `require` stehen, muss auf der VM zusätzlich `composer install --no-dev` ausgeführt werden.
 
-Sobald die Datenbank eingerichtet ist, werden hier die Schritte für Änderungen am Datenbankschema ergänzt.
-
 1. System aktualisieren:
    ```
    sudo apt update
